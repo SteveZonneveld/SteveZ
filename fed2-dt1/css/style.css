@@ -1,0 +1,34 @@
+/* Scoreapp v0.1 CSS */
+
+body {
+	font-family: helvetica;
+}
+
+/* Menu */
+nav ol li {
+	display: inline-block;
+	margin: 0 1em;
+}
+
+/* Secties */
+section#content > section {
+	display: none;
+}
+
+section#content > section.active {
+	display: block;
+}
+
+/* Tabel */
+table {
+    background-color: rgba(200, 100, 100, 0.2);
+    width: 60%;
+}
+
+tr {
+    text-align: center;
+}
+
+tr:nth-child(2n) {
+    background-color: rgba(200, 100, 100, 0.2);
+}
