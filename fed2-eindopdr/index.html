@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Web App Skeleton v0.1</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header>
+
+			<h1>Web App Skeleton v0.1</h1>
+
+			<!-- Head nav -->
+			<nav>
+				<ol>
+					<li><a href="#/schedule">Schedule page</a></li>
+					<li><a href="#/game">Game page</a></li>
+					<li><a href="#/ranking">Ranking page</a></li>
+					<li><a href="#/movies">Movies page</a></li>
+				</ol>
+			</nav>
+
+		</header>
+
+		<!-- Data objects -->
+		<section id="content">
+
+			<!-- Schedule page -->
+			<section data-route="schedule" class="active">
+				<h1 data-bind="title"></h1>
+				<p data-bind="description"></p>
+
+	            <header>
+	                <h1>Pool A - Schedule</h1>
+	            </header>
+
+	            <table>
+	            	<thead>
+		                <tr>
+		                    <th>Monday 18 March</th>
+		                    <th>Team</th>
+		                    <th>Result</th>
+		                    <th>Team</th>
+		                </tr>
+	                </thead>
+	                <tbody data-bind="items">
+		                <tr>
+		                    <td data-bind="date"></td>
+		                    <td data-bind="team1"></td>
+		                    <td data-bind="team1Score"></td>
+		                    <td> - </td>
+		                    <td data-bind="team2Score"></td>
+		                    <td data-bind="team2"></td>
+		                </tr>
+	                </tbody>
+	            </table>
+
+			</section>
+
+			<!-- Game page -->
+			<section data-route="game">
+				<h1 data-bind="title"></h1>
+				<p data-bind="description"></p>
+
+		        <header>
+	            	<h1>Pool A - Score: Boomsquad vs. Burning Snow</h1>
+	            </header>
+
+	            <table>
+	                <tr>
+	                    <th>Team</th>
+	                    <th>Result</th>
+	                    <th>Team</th>
+	                </tr>
+
+	                <tr>
+	                    <td class="winner">Boomsquad</td>
+	                    <td>15 - 8</td>
+	                    <td>Burning Snow</td>
+	                </tr>
+	            </table>
+
+	            <table>
+	            	<thead>
+		                <tr>
+		                    <th>Score</th>
+		                    <th>Team</th>
+		                    <th>Points</th>
+		                    <th>Team</th>
+		                </tr>
+					</thead>
+		            <tbody data-bind="items">    
+		                <tr> 
+		                    <td data-bind="score"></td>
+		                    <td data-bind="team1"></td>
+		                    <td data-bind="team1Score"></td>
+		                    <td> - </td>
+		                    <td data-bind="team2Score"></td>
+		                    <td data-bind="team2"></td>
+		                </tr>
+	                </tbody>		             
+	            </table>
+
+			</section>
+
+			<!-- Ranking page -->
+			<section data-route="ranking">
+				<h1 data-bind="title"></h1>
+				<p data-bind="description"></p>
+
+				<header>
+	                <h1>Pool A - Ranking</h1>
+	            </header>
+
+	            <table>
+	            	<thead>
+		                <tr>
+		                    <th>Team</th>
+		                    <th>W</th>
+		                    <th>L</th>
+		                    <th>Points won</th>
+		                    <th>Points lost</th>
+		                    <th>+/-</th>
+		                </tr>
+	                </thead>
+	                <tbody data-bind="items">
+		                <tr>
+		                    <td data-bind="team"></td>
+		                    <td data-bind="Win"></td>
+		                    <td data-bind="Lost"></td>
+		                    <td data-bind="Sw"></td>
+		                    <td data-bind="Sl"></td>
+		                    <td data-bind="Pw"></td>
+		                    <td data-bind="Pl"></td>
+		                </tr>
+	            </table>
+
+			</section>
+
+			<!-- Movies page -->
+			<section data-route="movies">
+
+				<header>
+					<h1 data-bind="title"></h1>
+					<p data-bind="description"></p>
+				</header>
+
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Titel</th>
+							<th>Description</th>
+							<th>Release Date</th>
+							<th>Cover</th>
+						</tr>
+					</thead>
+					<tbody data-bind="reviews">
+						<tr>
+							<td data-bind="id"></td>
+							<td data-bind="title"></td>
+							<td data-bind="description"></td>
+							<td data-bind="release_date"></td>
+							<td data-bind="cover"></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</section>
+
+		</section>
+
+		<!-- Libs -->
+
+		<!-- Routie (router) -->
+		<script src="js/lib/routie.min.js"></script> <!-- Routes naar de verschillende pagina's met #'s -->
+		<!-- Transparancy (semantic client-side template engine) -->
+		<script src="js/lib/transparancy.min.js"></script> <!-- Genereer met het template script en de data-objecten, de html van de verschillende pagina's -->
+		<!-- DOM ready -->
+		<script src="js/lib/ready.min.js"></script> <!-- Cross platform DOM ready -->
+		<!-- Qwery (selector engine) -->
+		<script src="js/lib/qwery.min.js"></script> <!-- Ondersteunt CSS selectors -->
+
+		<script src="js/lib/promise.min.js"></script>
+
+		<!-- Application -->
+		<script src="js/app.js"></script>
+
+
+	</body>
+</html>
