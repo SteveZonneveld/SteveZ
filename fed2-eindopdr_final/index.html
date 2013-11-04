@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Amsterdam Ultimate - Autumn 2013</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header>
+
+			<h1>Amsterdam Ultimate - Autumn 2013</h1>
+
+			<!-- Head nav -->
+			<nav>
+				<ul>
+					<li><a href="#/schedule">Schedule page</a></li>
+					<li><a href="#/ranking">Ranking page</a></li>
+				</ul>
+			</nav>
+
+		</header>
+
+		<div id="spinner"><!-- Spinner komt hier --></div>
+
+		<!-- Data objecten -->
+		<article id="content">
+
+			<!-- Schedule pagina -->
+			<section data-route="schedule" class="active">
+
+				<section data-bind="schedule">
+				<section class="gesture">
+
+				<h1 data-bind="poolID"></h1>
+	            <table>	                
+                	<thead>
+						<tr>
+							<th>Date</th>
+							<th>Team</th>
+							<th></th>
+							<th>Results</th>
+							<th></th>
+							<th>Team</th>
+							<th>Update</th>
+						</tr>
+					</thead>
+					<tbody>
+		                <tr>
+		                    <td data-bind="date"></td>
+		                    <td data-bind="team1"></td>
+		                    <td data-bind="team1Score"></td>
+		                    <td> - </td>
+		                    <td data-bind="team2Score"></td>
+		                    <td data-bind="team2"></td>
+		                    <td>
+			                    <a data-bind="link">
+			                    	<label id="changescore">Update Score</label>
+			                    </a>
+			                </td>
+		                </tr>
+                	</tbody>
+	            </table>
+			    </section>
+			    </section>
+
+			</section>
+
+			<!-- Game pagina -->
+			<section data-route="game">
+
+				<section data-bind="game">
+					<section>
+						<label data-bind="team1Name"></label>
+							<input type="number" data-bind="team1Score" name="team1Score" id="team1Score" min="1" max="20" />
+						<label> v. </label>
+							<input type ="number" data-bind="team2Score" name="team2Score" id="team2Score" min"1" max="20" /> 
+						<label data-bind="team2Name"></label>
+						<p>
+							<label>Game ended?</label> 
+								<input type="radio" name="is_final" value="yes" /> 
+							<label> Yes </label> 
+								<input type="radio" name="is_final" value="no" checked /> 
+							<label> No </label>
+						</p>
+						<p>
+							<a href="javascript:void(0);" onclick="SCOREAPP.ajax.saveNewScore();"><label>Post Score</label></a>
+						</p>
+					</section>
+				</section>
+
+			</section>
+
+			<!-- Ranking pagina -->
+			<section data-route="ranking">
+
+				<section data-bind="rank">
+					<h1 data-bind="poolID"></h1>
+					<table>
+						<thead>
+							<tr>
+								<th>Team</th>
+								<th>W</th>
+								<th>L</th>
+								<th>GS</th>
+								<th>GA</th>
+								<th>+/-</th>
+							</tr>
+						</thead>
+						<tbody data-bind="teams">
+							<tr>
+								<td data-bind="team"></td>
+								<td data-bind="win"></td>
+								<td data-bind="lost"></td>
+								<td data-bind="gs"></td>
+								<td data-bind="ga"></td>
+								<td data-bind="balance"></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+			</section>
+
+		</article>
+
+		<!-- Libs -->
+
+		<!-- Routie (router) -->
+		<script src="js/lib/routie.min.js"></script> <!-- Routes naar de verschillende pagina's met #'s -->
+		<!-- Transparancy (semantic client-side template engine) -->
+		<script src="js/lib/transparancy.min.js"></script> <!-- Genereer met het template script en de data-objecten, de html van de verschillende pagina's -->
+		<!-- DOM ready -->
+		<script src="js/lib/ready.min.js"></script> <!-- Cross platform DOM ready -->
+		<!-- Qwery (selector engine) -->
+		<script src="js/lib/qwery.min.js"></script> <!-- Ondersteunt CSS selectors -->
+		<!-- GET en POST lib -->
+		<script src="js/lib/promise.min.js"></script>
+		<!-- Zorgt voor Fade effect -->
+		<script src="js/lib/fader.min.js"></script>
+		<!-- Gestures  -->
+		<script src="js/lib/quo.js"></script>
+
+		<!-- Applicatie -->
+		<script src="js/app.js"></script>
+
+
+	</body>
+</html>
